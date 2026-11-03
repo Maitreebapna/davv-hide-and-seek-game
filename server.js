@@ -49,8 +49,8 @@ const server = http.createServer((req, res) => {
 function listen(portToTry) {
   server.listen(portToTry, () => {
     console.log(`\n======================================================`);
-    console.log(` 🚗 DAVV Campus 2D Hide & Seek Game Server Running!`);
-    console.log(` 🔗 Open in browser: http://localhost:${portToTry}`);
+    console.log(`  DAVV Campus 2D Hide & Seek Game Server Running!`);
+    console.log(`  Open in browser: http://localhost:${portToTry}`);
     console.log(`======================================================\n`);
   });
 }
@@ -58,9 +58,9 @@ function listen(portToTry) {
 // Automatically fallback to next available port if current port is busy
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
-    console.warn(`⚠️  Port ${PORT} is already in use by another app.`);
+    console.warn(`  Port ${PORT} is already in use by another app.`);
     PORT += 1;
-    console.log(`🔄 Trying port ${PORT} instead...`);
+    console.log(` Trying port ${PORT} instead...`);
     listen(PORT);
   } else {
     console.error('Server error:', err);
