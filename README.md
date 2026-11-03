@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# 🚗 DAVV Campus 2D Hide & Seek (Dr. Driving Edition)
+
+#  DAVV Campus 2D Hide & Seek (Dr. Driving Edition)
 
 A high-performance 2D driving simulation and hide-and-seek game set in the real-world spatial layout of **DAVV Takshashila Parisar (UTD), Khandwa Road, Indore**.
 
@@ -8,61 +7,23 @@ Built with pure HTML5 Canvas, modern JavaScript (ES Modules), Web Audio API, and
 
 ---
 
-##  How to Open & Run in VS Code
 
-### Option 1: Using the Built-in Server (Recommended)
-1. Open this folder in **VS Code**:
-   ```powershell
-   code "C:\Users\maitree\.gemini\antigravity\scratch\davv-hide-and-seek"
-   ```
-2. Open the integrated terminal (`Ctrl + ~` or `Terminal -> New Terminal`).
-3. Run:
-   ```bash
-   node server.js
-   ```
-   *(or `npm start`)*
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
 
-### Option 2: Using VS Code "Live Server" Extension
-1. Install the **Live Server** extension by Ritwick Dey in VS Code if you haven't already.
-2. Right-click `index.html` in the file explorer and click **"Open with Live Server"**.
 
----
 
-## 👥 Friends Roster (12 Players)
-* **Maitree**
-* **Akshita**
-* **Iti**
-* **Jassi**
-* **Animesh**
-* **Mradul**
-* **Anirudh**
-* **Chinmay**
-* **Gourav**
-* **Lakshya**
-* **Arpan**
-* **Bhavik**
-
-In the **Lobby Screen**, you can select **any friend** from this list to be the **Denner**! The other 11 friends will automatically become the autonomous hiders.
-
----
-
-## 🚘 Denner Vehicles & Equipment
+## Denner Vehicles & Equipment
 
 Before the countdown starts, the Denner selects their search vehicle:
 
 | Vehicle | Speed | Sound / Stealth Profile | Special Advantage |
 | :--- | :--- | :--- | :--- |
-| **🚗 Dr. Driving Sedan** | 180 km/h (Fastest) | Loud Engine • High Alert | Dual headlights, high top speed, Dr. Driving PRND mechanics |
-| **🏍️ Campus Motorcycle** | 140 km/h | Medium Sound | High agility, rapid acceleration, can cut through sidewalks |
-| **🚲 Stealth Bicycle** | 70 km/h | Ultra Silent (Stealth Master) | Sneaks up on friends before they hear you coming! Ting-ting bell |
+| **Dr. Driving Sedan** | 180 km/h (Fastest) | Loud Engine • High Alert | Dual headlights, high top speed, Dr. Driving PRND mechanics |
+| **Campus Motorcycle** | 140 km/h | Medium Sound | High agility, rapid acceleration, can cut through sidewalks |
+| **Stealth Bicycle** | 70 km/h | Ultra Silent (Stealth Master) | Sneaks up on friends before they hear you coming! Ting-ting bell |
 
 ---
 
-## 🎮 Gameplay Flow
+##  Gameplay Flow
 
 ### 1. 10-Second Countdown (`10... 9... 8... 1, GO!`)
 * The Denner's screen is dimmed at **Gate 1 (Khandwa Road Main Gate)**.
@@ -88,7 +49,7 @@ Before the countdown starts, the Denner selects their search vehicle:
   * If they hear the engine roaring or see headlights getting close (< 15 meters), they **panic and sprint** to another corner shouting *"Bhago bhago!"* or *"Denner aa gaya!"*
   * Honking your horn startles them and reveals their position!
 * **Tagging Friends**:
-  * Get within range (~50px) and hit `[SPACEBAR]` or click the glowing `[🎯 TAG FRIEND]` button.
+  * Get within range (~50px) and hit `[SPACEBAR]` or click the glowing `[ TAG FRIEND]` button.
   * The caught friend plays their custom catch dialogue, and their status marks as **`✓ OUT`**.
 * **Caught players**:
   * Each caught friend joins the visible **Out queue** on the right side of the screen, making it clear who is out and in what order they were caught.
@@ -101,7 +62,7 @@ Before the countdown starts, the Denner selects their search vehicle:
 
 ---
 
-## 📍 DAVV Campus Spatial Layout
+##  DAVV Campus Spatial Layout
 
 ```
                   [Gate 1: Khandwa Road Main Entrance]
@@ -119,17 +80,4 @@ Before the countdown starts, the Denner selects their search vehicle:
       └─────────────────────────────────────────────────────────────┘
 ```
 
----
 
-## 🛠️ Architecture & Tech Stack
-* **Language:** Modern ECMAScript 2022 (Modular ES Modules)
-* **Rendering:** HTML5 Canvas 2D with smooth camera tracking & particle lighting
-* **Physics:** Custom kinematic Ackermann steering, inertia, drift friction, and AABB building collision
-* **Audio:** 100% Procedural Web Audio API (real-time engine oscillator scaling, dual-tone car horn, bicycle bell chime, victory chords)
-* **Zero Dependencies:** Runs instantly with native browser support and Node.js built-ins.
-=======
-# davv-hide-and-seek-game
->>>>>>> 9c3c627599591fb2d5c938d870501c565558ba9e
-=======
-# davv-hide-and-seek-game
->>>>>>> cc4e0784467db69db3bf747a6852e60f9defa650
