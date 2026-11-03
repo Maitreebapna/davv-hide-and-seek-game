@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DAVV Campus Hide & Seek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- LOBBY SCREEN -->
+  <div id="lobby-screen" class="modal-layer">
+    <div class="lobby-card">
+      <div class="header">
+        <h1>DAVV Campus Hide & Seek</h1>
+        <p class="subtitle">Takshashila Parisar (UTD), Indore • Indian Coffee House & Campus Grounds</p>
+      </div>
+
+      <!-- Pick Denner -->
+      <div class="section">
+        <label class="section-label">Select the Denner: <span id="denner-label" class="highlight">Maitree</span></label>
+        <div id="friends-selection-grid" class="friends-chips">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- Pick Vehicle -->
+      <div class="section">
+        <label class="section-label">Choose Ride:</label>
+        <div class="vehicle-options">
+          <div class="vehicle-card active" data-vehicle="car">
+            <span class="v-icon">🚗</span>
+            <div class="v-info">
+              <strong>Car (Sedan)</strong>
+              <span>Fastest • High beam lights</span>
+            </div>
+          </div>
+          <div class="vehicle-card" data-vehicle="motorcycle">
+            <span class="v-icon">🏍️</span>
+            <div class="v-info">
+              <strong>Motorcycle</strong>
+              <span>Quick turns • Can use narrow alleys</span>
+            </div>
+          </div>
+          <div class="vehicle-card" data-vehicle="bicycle">
+            <span class="v-icon">🚲</span>
+            <div class="v-info">
+              <strong>Bicycle</strong>
+              <span>Completely silent • Sneak up quietly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button id="btn-mute" class="btn-secondary">Sound: On</button>
+        <button id="btn-start-game" class="btn-primary">Start Game (10s Countdown)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10S COUNTDOWN SCREEN -->
+  <div id="countdown-screen" class="modal-layer" style="display: none;">
+    <div class="countdown-card">
+      <span class="pill">DENNER IS COUNTING</span>
+      <div id="countdown-digits" class="big-number">10</div>
+      <p class="hint">Friends are hiding behind Indian Coffee House (ICH), Central Library, SCSIT, and Vigyan Bhawan!</p>
+    </div>
+  </div>
+
+  <!-- IN-GAME HUD -->
+  <div id="game-hud" class="hud-layer" style="display: none;">
+    
+    <!-- Top Center Scoreboard -->
+    <div class="hud-top">
+      <div class="hud-score-card">
+        <span id="hud-score" class="score-text">0 / 11 Caught</span>
+        <span class="divider">•</span>
+        <span id="hud-time" class="timer-text">00:00</span>
+      </div>
+      <div class="hud-guide-text">
+        Use <b>Arrow Keys</b> (↑ Forward, ↓ Reverse, ← → Turn) • <b>Just touch friends to catch them!</b>
+      </div>
+    </div>
+
+    <aside id="out-queue" class="out-queue" aria-label="Players who are out" aria-live="polite" style="display: none;">
+      <h2>Out queue <span id="out-queue-count">0</span></h2>
+      <ol id="out-queue-list" class="out-queue-list"></ol>
+    </aside>
+
+    <!-- Bottom Left: Horn Button -->
+    <div class="hud-bottom-left">
+      <button id="btn-horn" class="simple-btn" title="Press H on keyboard">
+        📢 Horn (H)
+      </button>
+    </div>
+
+    <!-- Bottom Center: Speed -->
+    <div class="hud-bottom-center">
+      <div id="hud-speed-value" class="speed-pill">0 km/h</div>
+    </div>
+
+    <!-- Bottom Right: Friendly On-Screen Arrow D-Pad & Tag -->
+    <div class="hud-bottom-right">
+      <button id="btn-tag" class="simple-tag-btn" title="Press Spacebar to Tag">
+        Tag Friend (Space)
+      </button>
+      
+      <div class="dpad">
+        <div class="dpad-row">
+          <button id="btn-up" class="dpad-key" title="Up Arrow (Forward)">↑</button>
+        </div>
+        <div class="dpad-row">
+          <button id="btn-left" class="dpad-key" title="Left Arrow (Turn Left)">←</button>
+          <button id="btn-down" class="dpad-key" title="Down Arrow (Reverse)">↓</button>
+          <button id="btn-right" class="dpad-key" title="Right Arrow (Turn Right)">→</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATCH NOTIFICATION TOAST -->
+  <div id="catch-toast" class="toast-box"></div>
+
+  <!-- VICTORY SCREEN -->
+  <div id="victory-screen" class="modal-layer" style="display: none;">
+    <div class="victory-card">
+      <span class="vic-badge">ROUND FINISHED</span>
+      <h2 id="vic-title">Last Hider Wins!</h2>
+      <p id="vic-sub" class="vic-sub">The last player still hiding wins!</p>
+
+      <div class="vic-summary">
+        <div><span>Winner:</span> <b id="vic-winner">Maitree</b></div>
+        <div><span>Denner:</span> <b id="vic-denner">Maitree</b></div>
+        <div><span>Time Taken:</span> <b id="vic-time">45 seconds</b></div>
+      </div>
+
+      <div class="victory-actions">
+        <button id="btn-cancel-game" class="btn-secondary">Cancel</button>
+        <button id="btn-play-again" class="btn-primary">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main ES Module -->
+  <script type="module" src="src/game.js"></script>
+</body>
+</html>

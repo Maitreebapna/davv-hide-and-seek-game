@@ -1,0 +1,13 @@
+{
+  "name": "davv-hide-and-seek",
+  "version": "1.0.0",
+  "description": "2D Dr. Driving inspired Hide & Seek in DAVV Takshashila Parisar, Indore",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["game", "canvas", "davv", "hide-and-seek", "driving-simulator"],
+  "author": "Maitree",
+  "license": "MIT"
+}
