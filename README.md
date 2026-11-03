@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚗 DAVV Campus 2D Hide & Seek (Dr. Driving Edition)
 
 A high-performance 2D driving simulation and hide-and-seek game set in the real-world spatial layout of **DAVV Takshashila Parisar (UTD), Khandwa Road, Indore**.
@@ -125,3 +126,6 @@ Before the countdown starts, the Denner selects their search vehicle:
 * **Physics:** Custom kinematic Ackermann steering, inertia, drift friction, and AABB building collision
 * **Audio:** 100% Procedural Web Audio API (real-time engine oscillator scaling, dual-tone car horn, bicycle bell chime, victory chords)
 * **Zero Dependencies:** Runs instantly with native browser support and Node.js built-ins.
+=======
+# davv-hide-and-seek-game
+>>>>>>> 9c3c627599591fb2d5c938d870501c565558ba9e
